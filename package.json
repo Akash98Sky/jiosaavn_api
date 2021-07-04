@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "example": "ts-node examples/example.ts",
+    "example": "tsc && ts-node examples/example.ts",
     "tsc": "tsc"
   },
   "author": "Akash Mondal",

@@ -28,3 +28,8 @@ export default function JioSaavn() {
         getSongs,
     };
 }
+
+export {
+    LaunchDataModel,
+    SongsByIdsModel
+};

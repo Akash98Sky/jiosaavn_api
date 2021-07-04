@@ -1,4 +1,4 @@
-import JioSaavn from '../src/index';
+import JioSaavn from '../lib/index';
 
 async function runex() {
     const saavn = JioSaavn();

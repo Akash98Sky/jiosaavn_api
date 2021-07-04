@@ -118,5 +118,4 @@ dist
 .pnp.*
 
 # Custom ignores
-lib/
-res_json
+res_json/
