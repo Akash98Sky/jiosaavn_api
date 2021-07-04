@@ -1,0 +1,21 @@
+{
+  "name": "jiosaavn_api",
+  "version": "1.0.0",
+  "description": "An unofficial JioSaavn API for JS/TS",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "example": "ts-node examples/example.ts",
+    "tsc": "tsc"
+  },
+  "author": "Akash Mondal",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
