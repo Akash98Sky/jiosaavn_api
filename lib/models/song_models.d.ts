@@ -1,3 +1,4 @@
+import { ArtistMap, Rights } from './artist';
 export interface SongsByIdsModel {
     songs: SongDetails[];
     modules: Modules;
@@ -52,6 +53,7 @@ export interface MoreInfo {
     origin: string;
     is_dolby_content: boolean;
     "320kbps": string;
+    media_url: string;
     encrypted_media_url: string;
     encrypted_cache_url: string;
     album_url: string;
@@ -69,23 +71,4 @@ export interface MoreInfo {
     vlink: string;
     triller_available: boolean;
     lyrics_id: string;
-}
-export interface ArtistMap {
-    primary_artists: Artist[];
-    featured_artists: any[];
-    artists: Artist[];
-}
-export interface Artist {
-    id: string;
-    name: string;
-    role: string;
-    image: string;
-    type: string;
-    perma_url: string;
-}
-export interface Rights {
-    code: string;
-    cacheable: string;
-    delete_cached_object: string;
-    reason: string;
 }

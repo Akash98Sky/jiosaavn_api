@@ -11,11 +11,13 @@
   "author": "Akash Mondal",
   "license": "MIT",
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
     "@types/node": "^16.0.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "crypto-js": "^4.1.1"
   }
 }

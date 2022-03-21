@@ -1,3 +1,5 @@
+import { ArtistMap } from './artist';
+
 export interface LaunchDataModel {
     new_trending:    NewTrending[];
     top_playlists:   TopPlaylist[];
@@ -166,28 +168,6 @@ export interface NewAlbumMoreInfo {
     song_count:   string;
     release_date: Date;
     artistMap:    ArtistMap;
-}
-
-export interface ArtistMap {
-    primary_artists:  Artist[];
-    featured_artists: any[];
-    artists:          Artist[];
-}
-
-export interface Artist {
-    id:        string;
-    name:      string;
-    role:      Role;
-    image:     string;
-    type:      FeaturedStationTypeEnum;
-    perma_url: string;
-}
-
-export enum Role {
-    Empty = "",
-    Music = "music",
-    Singer = "singer",
-    Starring = "starring",
 }
 
 export enum FeaturedStationTypeEnum {
