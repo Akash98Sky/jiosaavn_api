@@ -1,5 +1,6 @@
 import { formatAlbumJson, formatPlaylistJson, formatSongJson } from './helpers/formatter';
 import { AlbumDetails } from './models/album_details';
+import { ApiResponse } from './models/api_response';
 import { LaunchDataModel } from './models/launch_data';
 import { Lyrics } from './models/lyrics';
 import { PlaylistDetails } from './models/playlist_details';
@@ -31,9 +32,8 @@ export default function JioSaavn() {
     const getSongs = (...ids: string[]) => {
         return apiClient
             .getJson<SongsByIdsModel>({ '__call': 'song.getDetails', 'pids': ids.join(',') })
-            .then(res => {
+            .then<ApiResponse<SongsByIdsModel>>(res => {
                 res.data.songs.forEach(song => formatSongJson(song));
-
                 return res;
             });
     };
@@ -41,13 +41,13 @@ export default function JioSaavn() {
     const getAlbum = (albumid: string) => {
         return apiClient
             .getJson<AlbumDetails>({ '__call': 'content.getAlbumDetails', 'albumid': albumid })
-            .then(res => formatAlbumJson(res.data));
+            .then<ApiResponse<AlbumDetails>>(res => ({ ...res, data: formatAlbumJson(res.data) }));
     };
 
     const getPlaylist = (listid: string) => {
         return apiClient
             .getJson<PlaylistDetails>({ '__call': 'playlist.getDetails', 'listid': listid })
-            .then(res => formatPlaylistJson(res.data));
+            .then<ApiResponse<PlaylistDetails>>(res => ({ ...res, data: formatPlaylistJson(res.data) }));
     };
 
     const getLyrics = (lyrics_id: string) => {
