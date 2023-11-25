@@ -4,6 +4,8 @@ import { SongDetails } from '../models/song_models';
 import CryptoJS from 'crypto-js';
 
 export function formatSongJson(data: SongDetails): SongDetails {
+    data['title'] = _formatString(data['title']);
+    data['subtitle'] = _formatString(data['subtitle']);
     data['more_info']['media_url'] =
         _decryptUrl(data['more_info']['encrypted_media_url']);
 
