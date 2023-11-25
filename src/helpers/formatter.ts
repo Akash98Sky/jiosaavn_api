@@ -29,9 +29,9 @@ export function formatPlaylistJson(data: PlaylistDetails): PlaylistDetails {
 }
 
 const _formatString = (str: string) => str
-    .replace('&quot;', "'")
-    .replace('&amp;', '&')
-    .replace('&#039;', "'");
+    .replace(/&quot;/g, "'")
+    .replace(/&amp;/g, '&')
+    .replace(/&#039;/g, "'");
 
 const _decryptUrl = (url: string) => {
     const keyHex = CryptoJS.enc.Utf8.parse('38346591');
